@@ -1,0 +1,65 @@
+# Configuration for H1X_MobDrops made by Wertík from The Port
+
+# Plugin prefix, use %prefix% in messages
+plugin-prefix: '&cMobDrops &8>> '
+
+# Enable debug messages
+debug-enabled: true
+
+# Worlds where the plugin takes action
+worlds:
+  - world
+  - world_nether
+
+# Defaults, affect all the mobs that are not configured down below,.. just in case you wanted to have some fun.
+# All options can be removed, default values will be used.
+Defaults:
+  drops:
+    stick:
+      type: STICK
+      amount: 1
+      name: '&6A random stick'
+      lore:
+        - '&7Just.. a random.. stick.'
+        - ''
+        - '&7Mob killed by %player%.'
+      glow: false
+  player-kill: true
+
+# Mob configurations, add a new section with the name of EntityType wanted.
+Mobs:
+  PIG:
+    # Drops that should.. drop from the mob.
+    drops:
+      pork:
+        type: GRILLED_PORK
+        # Dynamic amounts are not supported.
+        amount: 1
+        # Name & lore both support PlaceholderAPI, as well as built-in %player% & %loc_x/y/z%
+        name: '&cGrilled pork'
+        lore:
+          - '&7Yummy.'
+          - ''
+          - '&7Mob killed by %player%.'
+          - '&7Dropped &8@ &7%loc_x% &f; &7%loc_y% &f; &7%loc_z%'
+        glow: false
+
+    # Drop on ground, or go directly to killer?
+    # Default: false
+    to-inventory: false
+    # Drop vanilla drops to ground, or send them to the killer?
+    # Default: false
+    to-inventory-vanilla: false
+
+    # Has to be killed by a player to drop custom drops.
+    # Default: false
+    player-kill: true
+
+    # Disable vanilla drops?
+    # Default: false
+    disable-vanilla-drops: true
+
+Messages:
+  help:
+    - '&8&m--------&c MobDrops &f%version% &8&m--------'
+    - '&c/mb reload &8- &7Reload the plugin.'

@@ -1,0 +1,13 @@
+name: H1X_MobDrops
+main: space.devport.wertik.mobdrops.Main
+version: 1.0
+author: Wertik1206
+softdepend:
+  - PlaceholderAPI
+commands:
+  mobdrops:
+    aliases: [mb, mobdrop, mdrop, mdrops, mobdrop]
+    description: Main plugin command
+permissions:
+  mobdrops.admin:
+    description: Basically only the reload command
